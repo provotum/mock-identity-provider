@@ -23,7 +23,7 @@ public class WalletController {
     @RequestMapping(value = CONTEXT, method = RequestMethod.POST)
     @ResponseStatus(HttpStatus.ACCEPTED)
     public void addWallets(@RequestBody WalletRequest wallets) {
-        this.walletAssigner.addWallets(wallets.getWallets());
+        this.walletAssigner.overrideWallets(wallets.getWallets());
     }
 
     @RequestMapping(value = CONTEXT + "/next", method = RequestMethod.GET)

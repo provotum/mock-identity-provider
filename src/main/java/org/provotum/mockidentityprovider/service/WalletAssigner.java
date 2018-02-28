@@ -30,6 +30,11 @@ public class WalletAssigner {
         this.wallets.addAll(wallets);
     }
 
+    public void overrideWallets(List<Wallet> wallets) {
+        logger.info("Removing old wallets. Adding " + wallets.size() + " wallets.");
+        this.wallets = wallets;
+    }
+
     public Wallet getNextWallet() {
         if (this.counter == this.wallets.size()) {
             logger.warning("No wallet left to assign. Reached (" + (this.counter + 1) + "/" + this.wallets.size() + "). Returning null.");
